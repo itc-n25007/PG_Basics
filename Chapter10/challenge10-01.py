@@ -3,14 +3,16 @@ import random
 def hangman(word):
     wrong = 0
     stages = ["",
-              "________        ",
-              "|               ",
-              "|       |       ",
-              "|       O       ",
-              "|      /|\      ",
-              "|      / \      ",
-              "|               "
+             "________        ",
+             "|               ",
+             "|        |      ",
+             "|        0      ",
+             "|       /|\\     ",
+             "|       / \\     ",
+             "|               "
               ]
+
+
     rletters = list(word)
     board = ["_"] * len(word)
     win = False
@@ -33,9 +35,9 @@ def hangman(word):
                 print(" ".join(board))
                 win = True
                 break
-            if not win:
-                print("\n".join(stages[0:wrong+1]))
-                print("あなたの負け！正解は {}.".format(word))
+        if not win:
+            print("\n".join(stages[0:wrong+1]))
+            print("あなたの負け！正解は {}.".format(word))
 
 answer=["アノニマス","プーチン","トランプ","イシバ","ヒロキ"]
 r=random.randint(0,len(answer)-1)
